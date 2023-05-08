@@ -1,7 +1,7 @@
 
-# LAB - Class 02
+# LAB - Class 03
 
-## Project: math-series
+## Project: madlib_cli
 
 ### Author
 
@@ -13,6 +13,10 @@ in the ubintu terminal run the following command to install all of the Python mo
 
  ```pip install -r requirements.txt```
 
-then run the following command to test the functionality of all units
+run the following command to test the functionality of all units
 
 ```pytest```
+
+run the following command to start the madlib-cli
+
+```python3.11 madlib_cli/madlib.py``` or ```python3 madlib_cli/madlib.py```
