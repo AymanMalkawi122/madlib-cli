@@ -24,6 +24,13 @@ def read_template(path):
         lines = f.read()
     return lines
 
+def write_template(path,txt):
+    if not os.path.exists(path):
+        raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), path)
+    with open(path, "w") as f:
+        lines = f.write(txt)
+    return lines
+
 
 def parse_template(txt):
     print(txt, "debug")
@@ -42,6 +49,7 @@ choice = ""
 
 if __name__ == "__main__":
     quit_flag = False
+    write_template("assets/result.txt","empty file")
 
     def print_commands():
         commands = r"""
@@ -105,14 +113,14 @@ Commands
                 usr_input = input(f">({prompt}) ")
                 parts.append(str(usr_input))
 
-            text = merge(extacted_txt,parts)
+            write_template("assets/result.txt",merge(extacted_txt,parts))
             print ("Done!")
         else:
             print("text is empty or invalid format")
 
 
     def display():
-        print(text)
+        print(read_template("assets/result.txt"))
 
     commands = {
         "read": read,
